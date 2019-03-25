@@ -1,0 +1,83 @@
+<!Doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="styling.css">
+</head>
+<body>
+<div id ="first" align="center">
+  <h2>Fortune Chinula - Chancellor College</h2>
+  <img src ="IMG_20190325_173402.jpg" alt="Fortune's Profile Pic" height="120" width="120" align="left">
+  <br>
+  <br>
+  <a href="Github.com">my Github Account</a>
+  <a href="mailto:bsc-inf-13-17@cc.ac.mw">my email</a>
+  <a href="www.facebook.com"target="_blank">my facebook account</a>
+</div>
+<br>
+<br>
+<br>
+<div id="second">
+<h2 align="center">Projects</h2><br><br><br>
+  <legend align ="center">Enter Project Information</legend>
+    <form method ="post" align ="center">
+    <b>Project Name :</b> <br>
+    <input type = "text" id ="prName" name ="pname" required autocomplete="off"><br>
+    <b>Project Description:</b><br>
+    <input type = "text" id ="prDetails" name ="pdetails" required autocomplete="off"><br>
+    <b>Completion Date:</b><br>
+    <input type = "date" id ="coDate" name ="cdate" required autocomplete="off"><br>
+    <button type ="button" id ="infSubmit">Submit</button><br><br><br>
+<fieldset>
+  <legend>Local Storage Output</legend>
+  <a href ="Project Description Page.html" target ="_blank"><p id="fOutput" onclick = "fortune.html"></p></a>
+</fieldset>
+  </form><br><br>
+</div>
+<br>
+<br>
+<br> 
+<div id = "third">
+  <h2>Work Experience</h2>
+  <form method ="post" action="Work Experience.html">
+    Enter Your Work Experience:<br> <input type="text" name="wexp" id ="experience" required><br>
+    <button type ="button" id ="submitinfo">Submit</button>
+  </form><br><br>
+  <fieldset>
+    <legend>localStorage Output</legend>
+    <a href="Work Experience.html" target="_blank"><p id = "outExpr"></p></a>
+  </fieldset><br><br>
+
+</div>
+<br>
+</body>
+<script type="text/javascript">
+  const prName = document.getElementById("prName");
+  const prDetais = document.getElementById("prDetais");
+    const coDate = document.getElementById("coDate");
+    const infSubmit = document.getElementById("infSubmit");
+    const fOutput =document.getElementById("fOutput");
+    const experience = document.getElementById("experience");
+    const submitinfo = document.getElementById("submitinfo");
+    const outExpr = document.getElementById("outExpr");
+
+    infSubmit.onclick = function() {
+      const proName = prName.value;
+      const proDetails = prDetails.value;
+      const comDate= coDate.value;
+      if(proName && proDetails && comDate){
+        localStorage.setItem('proName',proName);
+        localStorage.setItem('proDetails',proDetails);
+        localStorage.setItem('comDate',comDate);
+         fOutput.innerHTML = localStorage.getItem('proName');
+      }//to put our items in local storage
+    };
+    submitinfo.onclick =function(){
+      const exper = experience.value;
+      if(exper !== ""){
+        localStorage.setItem('exper',exper);
+        outExpr.innerHTML= localStorage.getItem('exper');
+      }
+    }
+     
+</script>
+</html>

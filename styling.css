@@ -1,0 +1,29 @@
+body{
+margin-left : 95px;
+margin-right : 95px;
+}
+
+#first{
+  border:2px solid black;
+  height:200px;
+  padding-left: 100px;
+}
+#second{
+border : 2px solid black;
+padding-left:0px;
+padding-right:0px;
+
+}
+table{
+border-spacing: 15px;
+}
+th,td{
+border:2px solid black;
+text-align:center;
+padding-left:2px;
+padding-right:2px;
+}
+#third{
+  text-align: center;
+  border:2px solid black;
+}
